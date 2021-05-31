@@ -1,0 +1,35 @@
+<ActionBar title="My Activity" class="topbar">
+</ActionBar>
+
+<GridLayout rows="auto,*" columns="*">
+
+  <GridLayout row="0" rows="*" columns="*,*,*,*" class="drdview">
+    <Button col="0" text="All" (tap)="onTapAll()" class="all"></Button>
+    <Button col="1" text="Progressing" (tap)="onTapProgressing()" class="progressing"></Button>
+    <Button col="2"  text="Completed" (tap)="onTapCompleted()" class="completed"></Button>
+    <Button col="3" text="Cancel" (tap)="onTapCancelled()" class="cancel"></Button>
+  </GridLayout>
+
+  <GridLayout row="1" tkExampleTitle tkToggleNavButton class="list-view">
+    <RadListView [items]="dataItems" >
+        <ng-template tkListItemTemplate let-item="item" let-i="index">
+            <StackLayout orientation="vertical" col="0" let i = index; (tap)="onTapRow(i)">
+                <Label class="name" [text]="item.name"></Label>
+                <GridLayout rows="*" columns="*,*">
+                  <Label class="date" col="0" [text]="item.date"></Label>
+                  <StackLayout col="1" orientation="horizontal" class="stackview" >
+                    <Label class="amount" col="1" [text]="item.amount"></Label>
+                    <Image src="~/images/dava.png" col="2" stretch="aspectFill" class="img"></Image>
+                  </StackLayout>
+                </GridLayout>
+
+                <Label class="item" [text]="item.item"></Label>
+                <Label class="seprator"></Label>
+
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>
+
+
+</GridLayout>

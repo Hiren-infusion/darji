@@ -1,0 +1,163 @@
+.topbar{
+    background-color: #4287f5;
+    font-size: 30;
+    color: white;
+    font-weight: bold;
+}
+.order-stack {
+
+    margin-left: 15;
+    margin-top: 20;
+}
+.main-view {
+    background-color: lightgrey;
+}
+.top-view {
+    background-color: white;
+
+}
+.bottom-view {
+    background-color: white;
+    margin-top: 10;
+}
+.orderno {
+    font-size: 22;
+    font-weight: bold;
+
+}
+.name {
+    margin-top: 20;
+    font-size: 18;
+    font-weight: bold
+}
+.address {
+    font-size: 14;
+    margin-bottom: 20;
+}
+.order-status {
+    font-size: 20;
+    font-weight: bold;
+    color: maroon;
+    margin-left: 40;
+}
+.img-call {
+    height: 20;
+    width: 20;
+}
+.call {
+    font-size: 16;
+    text-align: center;
+}
+.stackview-call {
+    margin-top: 40;
+    margin-left: 0;
+    margin-right: 0;
+}
+.stk-call {
+    margin-left: 25;
+}
+.stk-mail {
+    margin-left: 25;
+}
+.stk-chat {
+    margin-left: 25;
+}
+.items {
+    margin-left: 15;
+    margin-top: 15;
+    font-size: 18;
+    font-weight: bold;
+}
+.stk-price {
+    margin-left: 15;
+    margin-top: 30;
+}
+.price {
+    font-size: 15;
+    color: gray;
+
+}
+.placed {
+    font-size: 15;
+    color: gray;
+    margin-top: 10;
+}
+.instruction {
+    font-size: 14;
+    color: gray;
+}
+.button {
+    font-size: 14;
+    color: black;
+}
+.stk-amount {
+    margin-left: 25;
+    margin-top: 30;
+}
+.continue {
+    margin-left: 15;
+    margin-right: 15;
+    margin-top: 30;
+    height: 50;
+    color: white;
+    font-size: 14;
+    background-color: blue;
+    margin-bottom: 125;
+    border-radius: 10;
+    box-shadow: lightgrey;
+    font-weight: bold;
+}
+.item-name {
+    font-size: 14;
+}
+.number-item {
+    font-size: 12;
+}
+.measurement-name {
+    font-size: 12;
+    border-color: black;
+    border-width: 1;
+    border-radius: 5;
+    background-color: white;
+}
+.stk-item {
+
+    border-radius: 5;
+    margin-left: 15;
+    border-width: 1;
+    border-color: black;
+    background-color: lightgray;
+    width: 140;
+
+}
+.itemdata {
+    margin-top: 25;
+}
+.stk-measurement {
+    margin-left: 10;
+
+}
+.measurement {
+    font-size: 14;
+    font-weight: bold;
+    color: maroon;
+    margin-left: 10;
+}
+.img-measurement {
+    height: 40;
+    width: 40;
+    margin-left: -15;
+
+}
+.radlist-view {
+
+}
+.amount {
+    font-size: 15;
+    color: black;
+}
+.date {
+    font-size: 15;
+    color: black;
+    margin-top: 10;
+}

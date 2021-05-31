@@ -1,0 +1,42 @@
+<ActionBar title="Write A Review" class="topbar">
+  <ActionItem position="left" icon="font://&#xf0a8;" (tap)="goBack()"></ActionItem>
+</ActionBar>
+
+<ScrollView orientation="vertical">
+  <GridLayout rows="auto, *" columns="*" class="main-component">
+
+    <GridLayout row="0" rows="*" columns="*" class="shadow">
+      <StackLayout orientation="horizontal" class="stackview">
+        <image src="~/images/dava.png" stretch="aspectFill" class="top-image"></image>
+        <StackLayout class="studio-detail">
+          <Label [text]="txtStudioName"  textWrap="true"  class=name></Label>
+          <Label [text]="txtStudioAddress"  textWrap="true"  class="address"></Label>
+          <Label [text]="txtOpenTime"  textWrap="true"  class="time"></Label>
+        </StackLayout>
+      </StackLayout>
+    </GridLayout>
+
+   <GridLayout rows="auto, *" columns="*" row="1" class="down" >
+    <StackLayout row="0" class="studio-detail">
+      <Label text="How much do you like us?"  textWrap="true"  class=down-title></Label>
+      <Label text="Consider our service,work,styles,collections,etc. before you rate."  textWrap="true"  class="detail"></Label>
+      <image src="~/images/dava.png" stretch="aspectFill" class="rate-image"></image>
+      <GridLayout row="1" rows="*" columns="*" class="rate-view">
+
+        <Label text="Rate us"  textWrap="true"  class=rate></Label>
+
+      </GridLayout>
+      <Label text="What do you like?"  textWrap="true"  class="like"></Label>
+      <TextView [(ngModel)]="txtContent" hint="Tell us more" editable="true" class="txt-view-detail"></TextView>
+      <Label text="Give a title to your review"  textWrap="true"  class=give-title></Label>
+      <Label text="Give a catchy title and reach more people with your review"  textWrap="true"  class=give-catchy></Label>
+      <TextField hint="Your title" editable="true" [text]="textFieldValue" class="txt-field" hint-color = "gray"></TextField>
+      <Button text="SUBMIT REVIEW" (tap)="goSubmitReview()" class="btn-submit"></Button>
+
+    </StackLayout>
+
+   </GridLayout>
+
+
+  </GridLayout>
+</ScrollView>

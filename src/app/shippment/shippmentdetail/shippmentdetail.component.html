@@ -1,0 +1,81 @@
+<ActionBar title="Shippement details" class="topbar"></ActionBar>
+
+<ScrollView orientation="vertical" >
+
+<GridLayout rows="auto,*" columns="*" class="main-view">
+
+  <GridLayout row="0" rows="*" columns="*" class="top-view">
+
+    <StackLayout class="stk-address">
+        <Label [text]="name" textWrap="true" class="name"></Label>
+        <Label [text]="address" textWrap="true" class="address"></Label>
+        <Label [text]="pincode" textWrap="true" class="pincode"></Label>
+        <Label [text]="mobile" textWrap="true" class="mobile"></Label>
+        <Button text="ADD/CHANGE SHIPPING ADDRESS" (tap)="OnTapChangeAddres()" class="shippingaddress"></Button>
+    </StackLayout>
+
+  </GridLayout>
+
+  <GridLayout row="1" rows="auto, auto, auto, auto, auto, auto, *" columns="*" class="bottom-view">
+
+    <Label row="0" [text]="order" textWrap="true" class="order"></Label>
+
+    <GridLayout row="1" rows="*" columns="*,*" class="grd-orderdetail">
+      <Label col="0" [text]="ordername" textWrap="true" class="name"></Label>
+      <StackLayout  col="1" class="order-stack">
+        <StackLayout orientation="horizontal" class="stackview-call">
+
+            <StackLayout class="stk-call">
+              <Image src="~/images/dava.png" stretch="aspectFill" class="img-call"></Image>
+              <Label text="Call" textWrap="true" class="call"></Label>
+            </StackLayout>
+
+            <StackLayout class="stk-mail">
+              <Image src="~/images/dava.png" stretch="aspectFill" class="img-call"></Image>
+              <Label text="Mail" textWrap="true" class="call"></Label>
+            </StackLayout>
+
+            <StackLayout class="stk-chat">
+              <Image src="~/images/dava.png" stretch="aspectFill" class="img-call"></Image>
+              <Label text="Chat" textWrap="true" class="call"></Label>
+            </StackLayout>
+
+        </StackLayout>
+
+      </StackLayout>
+    </GridLayout>
+
+    <GridLayout row="2" rows="*" columns="*" class="item-list">
+
+      <GridLayout tkExampleTitle tkToggleNavButton>
+        <RadListView [items]="dataItems" class="radlist-view" >
+          <ListViewGridLayout tkListViewLayout scrollDirection="Horizontal"  ></ListViewGridLayout>
+            <ng-template tkListItemTemplate let-item="item" let-i="index">
+                <StackLayout orientation="vertical" let i = index; (tap)="onTapRow(i)" class="stk-item">
+                  <Label class="name-item" [text]="item.nameOfItem"></Label>
+                  <Label class="number-item" [text]="item.itemNumber"></Label>
+                  <Label class="measurement-name" [text]="item.measurementName"></Label>
+                </StackLayout>
+            </ng-template>
+
+        </RadListView>
+    </GridLayout>
+
+    </GridLayout>
+
+    <Label row="3" class="line"></Label>
+
+    <Label row="4" [text]="pricedetail" textWrap="true" class="price-detail"></Label>
+
+    <GridLayout row="5" rows="*" columns="*,*" class="grd-amount">
+      <Label row="0" col="0" text="Total bill amount" textWrap="true" class="total-amount"></Label>
+      <Label row="0" col="1" [text]="amount" textWrap="true" class="amount"></Label>
+    </GridLayout>
+
+    <Button row="6" text="MAKE PAYMENT" (tap)="OnTapPayment()" class="payment"></Button>
+
+
+  </GridLayout>
+
+</GridLayout>
+</ScrollView>

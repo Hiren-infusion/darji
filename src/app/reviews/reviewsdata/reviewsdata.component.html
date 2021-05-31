@@ -1,0 +1,124 @@
+<ActionBar title="Reviews" class="topbar">
+</ActionBar>>
+
+<GridLayout rows="auto, *" columns="*" class="main-view">
+  <GridLayout row="0" rows="auto,*" columns="*" class="top-view">
+      <Label row="0" [text]="title" textWrap="true" class="title"></Label>
+
+      <StackLayout row="1" orientation="horizontal" class="stackview">
+
+        <StackLayout>
+          <image src="~/images/dava.png" stretch="aspectFill" class="image"></image>
+          <GridLayout rows="*" columns="*" class="star">
+
+          </GridLayout>
+        </StackLayout>
+
+        <GridLayout rows="*" columns="auto,auto,auto">
+
+          <StackLayout col="0">
+            <Label col="0" text="Excellent" textWrap="true" class="excellent"></Label>
+            <Label col="0" text="Very Good" textWrap="true" class="excellent"></Label>
+            <Label col="0" text="Average" textWrap="true" class="excellent"></Label>
+            <Label col="0" text="Poor" textWrap="true" class="excellent"></Label>
+            <Label col="0" text="Terrible" textWrap="true" class="excellent"></Label>
+          </StackLayout>
+
+          <StackLayout col="1">
+            <Progress col="1" value="25" maxValue="100" (valueChanged)="onValueChanged($event)" class="progress1"></Progress>
+            <Progress col="1" value="25" maxValue="100" (valueChanged)="onValueChanged($event)" class="progress2"></Progress>
+            <Progress col="1" value="25" maxValue="100" (valueChanged)="onValueChanged($event)" class="progress3"></Progress>
+            <Progress col="1" value="25" maxValue="100" (valueChanged)="onValueChanged($event)" class="progress4"></Progress>
+            <Progress col="1" value="25" maxValue="100" (valueChanged)="onValueChanged($event)" class="progress5"></Progress>
+          </StackLayout>
+
+          <StackLayout col="2">
+            <Label col="2" text="55" textWrap="true" class="count"></Label>
+            <Label col="2" text="55" textWrap="true" class="count"></Label>
+            <Label col="2" text="55" textWrap="true" class="count"></Label>
+            <Label col="2" text="55" textWrap="true" class="count"></Label>
+            <Label col="2" text="55" textWrap="true" class="count"></Label>
+          </StackLayout>
+
+
+        </GridLayout>
+      </StackLayout>
+  </GridLayout>
+
+  <GridLayout row="1" rows="auto,auto,*" columns="*" class="bottom-view">
+
+    <GridLayout row="0" col="0" rows="*" columns="*,*,*" class="stackview-buttom">
+
+      <StackLayout col="0" >
+        <Button text="RATED" (tap)="onTapRated()" class="rated"></Button>
+        <Label textWrap="true" class="bold-line" *ngIf="isRatedVisible" ></Label>
+      </StackLayout>
+
+      <StackLayout col="1">
+        <Button text="RECENT" (tap)="onTapRecent()" class="recent" ></Button>
+        <Label textWrap="true" class="bold-line" *ngIf="isRecentVisible" ></Label>
+      </StackLayout>
+
+      <StackLayout col="2">
+        <Button text="MY REVIEW" (tap)="onTapReview()" class="my-review" ></Button>
+        <Label textWrap="true" class="bold-line" *ngIf="isReviewVisible"></Label>
+      </StackLayout>
+
+    </GridLayout>
+
+    <Label row="1" text="" textWrap="true" class="line"></Label>
+
+    <GridLayout row="2" tkExampleTitle tkToggleNavButton class="list-view" *ngIf="isRatedVisible">
+      <RadListView [items]="dataItems">
+          <ng-template tkListItemTemplate let-item="item" let-i="index">
+              <StackLayout orientation="vertical" let i = index; (tap)="onTapRow(i)">
+                  <Label class="title-list" [text]="item.title"></Label>
+                  <Label class="name" [text]="item.name + item.time"></Label>
+                  <GridLayout rows="*" columns="*" class="list-star">
+                  </GridLayout>
+                  <Label class="full-review" [text]="item.fullreview"></Label>
+                  <Label class="review" [text]="item.review"></Label>
+                  <Label class="read-more" [text]="item.readmore"></Label>
+                  <Label class="seprator"></Label>
+              </StackLayout>
+          </ng-template>
+      </RadListView>
+  </GridLayout>
+
+  <GridLayout row="2" tkExampleTitle tkToggleNavButton class="list-view" *ngIf="isRecentVisible">
+    <RadListView [items]="dataItems">
+        <ng-template tkListItemTemplate let-item="item" let-i="index">
+            <StackLayout orientation="vertical" let i = index; (tap)="onTapRow(i)">
+                <Label class="title-list" [text]="item.title"></Label>
+                <!-- <Label class="name" [text]="item.name + item.time"></Label>
+                <GridLayout rows="*" columns="*" class="list-star">
+                </GridLayout>
+                <Label class="full-review" [text]="item.fullreview"></Label>
+                <Label class="review" [text]="item.review"></Label>
+                <Label class="read-more" [text]="item.readmore"></Label>
+                <Label class="seprator"></Label> -->
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>
+
+<GridLayout row="2" tkExampleTitle tkToggleNavButton class="list-view" *ngIf="isReviewVisible">
+  <RadListView [items]="dataItems">
+      <ng-template tkListItemTemplate let-item="item" let-i="index" >
+          <StackLayout orientation="vertical" let i = index; (tap)="onTapRow(i)">
+              <Label class="title-list" [text]="item.title"></Label>
+              <Label class="name" [text]="item.name + item.time"></Label>
+              <GridLayout rows="*" columns="*" class="list-star">
+              </GridLayout>
+              <!-- <Label class="full-review" [text]="item.fullreview"></Label>
+              <Label class="review" [text]="item.review"></Label>
+              <Label class="read-more" [text]="item.readmore"></Label>
+              <Label class="seprator"></Label> -->
+          </StackLayout>
+      </ng-template>
+  </RadListView>
+</GridLayout>
+
+  </GridLayout>
+
+</GridLayout>

@@ -1,0 +1,99 @@
+<ActionBar title="Order details" class="topbar">
+</ActionBar>
+
+<ScrollView orientation="vertical" >
+<GridLayout rows="auto,*" columns="*" class="main-view">
+    <GridLayout row="0" rows="*" columns="*,*" class="top-view">
+
+      <StackLayout col="0" class="order-stack">
+        <Label [text]="orderNo" textWrap="true" class="orderno"></Label>
+        <Label [text]="name" textWrap="true" class="name"></Label>
+        <Label [text]="address" textWrap="true" class="address"></Label>
+      </StackLayout>
+
+      <StackLayout col="1" class="order-stack">
+        <Label text="Order Status" textWrap="true" class="order-status"></Label>
+
+        <StackLayout orientation="horizontal" class="stackview-call">
+
+            <StackLayout class="stk-call">
+              <Image src="~/images/dava.png" stretch="aspectFill" class="img-call"></Image>
+              <Label text="Call" textWrap="true" class="call"></Label>
+            </StackLayout>
+
+            <StackLayout class="stk-mail">
+              <Image src="~/images/dava.png" stretch="aspectFill" class="img-call"></Image>
+              <Label text="Mail" textWrap="true" class="call"></Label>
+            </StackLayout>
+
+            <StackLayout class="stk-chat">
+              <Image src="~/images/dava.png" stretch="aspectFill" class="img-call"></Image>
+              <Label text="Chat" textWrap="true" class="call"></Label>
+            </StackLayout>
+
+        </StackLayout>
+
+      </StackLayout>
+    </GridLayout>
+
+
+        <GridLayout row="1" rows="*,*,*,*" columns="*" class="bottom-view">
+          <Label row="0" text="Items" textWrap="true" class="items"></Label>
+
+          <GridLayout row="1" tkExampleTitle tkToggleNavButton>
+            <RadListView [items]="dataItems" height="300" class="radlist-view"  >
+                <ng-template tkListItemTemplate let-item="item" let-i="index">
+                    <StackLayout orientation="vertical" col="0" let i = index; (tap)="onTapRow(i)">
+
+                        <GridLayout rows="*" columns="auto,auto" class="itemdata">
+
+                                <StackLayout col="0" class="item-name" class="stk-item">
+                                  <Label class="name-item" [text]="item.nameOfItem"></Label>
+                                  <Label class="number-item" [text]="item.itemNumber"></Label>
+                                  <!-- <Label class="measurement-name" [text]="item.measurementName"></Label> -->
+                                </StackLayout>
+
+                                <StackLayout col="1" orientation="horizontal" class="stk-measurement">
+                                  <Button text="Add a measurement" (tap)="onTapMeasurement()" class="measurement"></Button>
+                                  <Image src="~/images/dava.png" stretch="aspectFill" class="img-measurement"></Image>
+                                </StackLayout>
+
+                                <!-- <StackLayout col="1" class="stk-measurement">
+                                  <Label class="instruction" text="Instructions"></Label>
+                                  <Label class="button" text="Need press button"></Label>
+                                </StackLayout> -->
+
+                        </GridLayout>
+
+                    </StackLayout>
+                </ng-template>
+            </RadListView>
+        </GridLayout>
+
+
+
+          <StackLayout row="2" orientation="horizontal">
+
+          <StackLayout class="stk-price">
+              <Label text="Quoted Price" textWrap="true" class="price"></Label>
+              <Label text="Order Placed" textWrap="true" class="placed"></Label>
+              <Label text="Delivery date" textWrap="true" class="placed"></Label>
+              <Label text="Descriptions" textWrap="true" class="placed"></Label>
+          </StackLayout>
+
+          <StackLayout class="stk-amount">
+              <Label [text]="amount" textWrap="true" class="amount"></Label>
+              <Label [text]="orderDate" textWrap="true" class="date"></Label>
+              <Label [text]="deliveryData" textWrap="true" class="date"></Label>
+              <Label [text]="detail" textWrap="true" class="date"></Label>
+          </StackLayout>
+
+          </StackLayout>
+
+          <Button row="3" text="CONTINUE" (tap)="onTapContinue()" class="continue"></Button>
+
+
+        </GridLayout>
+
+</GridLayout>
+</ScrollView>

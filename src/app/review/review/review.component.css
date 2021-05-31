@@ -1,0 +1,138 @@
+.topbar{
+    background-color: #4287f5;
+    font-size: 30;
+    color: white;
+    font-weight: bold;
+}
+.image {
+    height: 10;
+    width: 10;
+}
+.main-component {
+    background-color: white;
+}
+.shadow {
+    box-shadow: 5px 5px 5px gray;
+}
+.top-image{
+    background-color: blue;
+    height: 80;
+    width: 80;
+    border-radius: 10;
+
+}
+.stackview {
+    padding: 20 10 0 20;
+
+}
+.studio-detail {
+
+    padding: 0 20 0 20;
+}
+.name {
+    font-size: 22;
+    color: black;
+    margin-left: 0;
+    margin-right: 5;
+    margin-top: 10;
+}
+.address {
+    font-size: 14;
+    color: gray;
+    margin-left: 0;
+    margin-right: 5;
+}
+.time {
+    font-size: 14;
+    color: gray;
+    margin-left: 0;
+    margin-right: 5;
+    margin-bottom: 10;
+
+}
+.down {
+    background-color: white;
+    margin-top: 10;
+    box-shadow: 5px  gray;
+
+}
+.down-title {
+    font-size: 22;
+    color: black;
+    padding-bottom: 5;
+}
+.detail {
+    font-size: 14;
+    color: gray;
+    padding-bottom: 40;
+}
+.rate-view {
+    height: 200;
+    background-color: lightgray;
+    margin-top: -20;
+}
+.rate-image {
+    height: 80;
+    width: 80;
+    background-color: lightpink;
+
+}
+.rate {
+    margin-top: -130;
+    text-align: center;
+    font-size: 22;
+    color: black;
+
+}
+.like {
+    margin-top: 20;
+    font-size: 22;
+    color: black;
+    padding-bottom: 10;
+}
+.tellus {
+    border-radius: 10;
+    border-color: black;
+    border-width: 1;
+    height: 200;
+}
+.txt-view-detail{
+    vertical-align: top;
+    border-width: 1;
+    border-color: black;
+    border-radius: 10;
+    padding: 10;
+    height: 250;
+    font-size: 16;
+    margin-left: 0;
+    margin-right: 0;
+    placeholder-color: gray;
+    margin-bottom: 20;
+}
+.give-title {
+    font-size: 22;
+    color: black;
+    padding-bottom: 5;
+}
+.give-catchy {
+    font-size: 14;
+    color: gray;
+}
+.txt-field{
+    margin-top: 20;
+    font-size: 14;
+    height: 40;
+    margin-left: 0;
+    margin-right: 0;
+    placeholder-color: gray;
+}
+.btn-submit {
+    margin-top: 30;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 10;
+    box-shadow: 5px gray;
+    background-color: lightskyblue;
+    height: 50;
+    border-radius: 10;
+}

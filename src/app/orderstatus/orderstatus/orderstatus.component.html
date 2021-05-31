@@ -1,0 +1,67 @@
+<ActionBar title="Order Status" class="topbar">
+</ActionBar>
+
+<ScrollView orientation="vertical" >
+<GridLayout rows="auto,auto,*,*" columns="*" class="main-view">
+    <GridLayout row="0" rows="*,*" columns="*,*" class="top-view">
+
+      <StackLayout row="0" col="0" class="order-stack">
+        <Label [text]="orderNo" textWrap="true" class="orderno"></Label>
+        <Label [text]="name" textWrap="true" class="name"></Label>
+        <Label [text]="address" textWrap="true" class="address"></Label>
+      </StackLayout>
+
+      <StackLayout row="0"col="1" class="order-stack">
+        <StackLayout orientation="horizontal" class="stackview-call">
+
+            <StackLayout class="stk-call">
+              <Image src="~/images/dava.png" stretch="aspectFill" class="img-call"></Image>
+              <Label text="Call" textWrap="true" class="call"></Label>
+            </StackLayout>
+
+            <StackLayout class="stk-mail">
+              <Image src="~/images/dava.png" stretch="aspectFill" class="img-call"></Image>
+              <Label text="Mail" textWrap="true" class="call"></Label>
+            </StackLayout>
+
+            <StackLayout class="stk-chat">
+              <Image src="~/images/dava.png" stretch="aspectFill" class="img-call"></Image>
+              <Label text="Chat" textWrap="true" class="call"></Label>
+            </StackLayout>
+
+        </StackLayout>
+
+      </StackLayout>
+    </GridLayout>
+
+      <GridLayout row="1" rows="*" columns="*" class="item-list">
+
+        <GridLayout tkExampleTitle tkToggleNavButton>
+          <RadListView [items]="dataItems" class="radlist-view" >
+            <ListViewGridLayout tkListViewLayout scrollDirection="Horizontal"  ></ListViewGridLayout>
+              <ng-template tkListItemTemplate let-item="item" let-i="index">
+                  <StackLayout orientation="vertical" let i = index; (tap)="onTapRow(i)" class="stk-item">
+                    <Label class="name-item" [text]="item.nameOfItem"></Label>
+                    <Label class="number-item" [text]="item.itemNumber"></Label>
+                    <Label class="measurement-name" [text]="item.measurementName"></Label>
+                  </StackLayout>
+              </ng-template>
+
+          </RadListView>
+      </GridLayout>
+
+      </GridLayout>
+
+
+
+    <GridLayout row="2" rows="auto,auto,*" columns="auto,*" class="bottom-view">
+      <Label row="0" text="Order Status" textWrap="true" class="order"></Label>
+      <StackLayout col="0" row="1" class="stk-payment">
+        <Button text="Made payment" (tap)="onTapPayment()" class="payment"></Button>
+        <Button text="Item delivered" (tap)="onTapItemDelivered()" class="delivered"></Button>
+      </StackLayout>
+
+    </GridLayout>
+
+</GridLayout>
+</ScrollView>
